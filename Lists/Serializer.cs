@@ -14,7 +14,7 @@ namespace Lists
         public async Task Serialize(string text)
         {
             using FileStream fs = new(path, FileMode.Create, FileAccess.Write, FileShare.None);
-            byte[] buffer = Encoding.UTF8.GetBytes(text.ToString());
+            byte[] buffer = Encoding.UTF8.GetBytes(text);
             await fs.WriteAsync(buffer);
         }
 

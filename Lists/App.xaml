@@ -5,8 +5,5 @@
              StartupUri="MainWindow.xaml">
 
     <Application.Resources>
-        <DataTemplate DataType="{x:Type local:MainWindow}">
-            <local:MainWindow />
-        </DataTemplate>
     </Application.Resources>
 </Application>

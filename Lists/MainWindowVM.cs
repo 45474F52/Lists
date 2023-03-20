@@ -89,6 +89,13 @@ namespace Lists
                 _isDirty = false;
             }, canExecute => _isDirty);
 
+            DeleteAllCommand = new RelayCommand(execute =>
+            {
+                FirstList.Clear();
+                SecondList.Clear();
+                _isDirty = true;
+            }, canExecute => FirstList.Count > 0 && SecondList.Count > 0);
+
             MoveDown = new RelayCommand(execute =>
             {
                 if (_lastSelectedItem == false)
@@ -167,6 +174,7 @@ namespace Lists
         public RelayCommand AddCommand { get; private init; }
         public RelayCommand DeleteCommand { get; private init; }
         public RelayCommand SaveCommand { get; private init; }
+        public RelayCommand DeleteAllCommand { get; private init; }
 
         public RelayCommand MoveUp { get; private init; }
         public RelayCommand MoveDown { get; private init; }

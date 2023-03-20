@@ -26,6 +26,9 @@
         <KeyBinding Command="{Binding SaveCommand}"
                     Key="S"
                     Modifiers="Ctrl" />
+        <KeyBinding Command="{Binding DeleteAllCommand}"
+                    Key="D"
+                    Modifiers="Ctrl" />
         <KeyBinding Command="{Binding MoveToSecond}"
                     Key="Right"
                     Modifiers="Ctrl" />
@@ -81,7 +84,7 @@
     </Window.Resources>
 
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width=".3*" />
@@ -119,7 +122,7 @@
                  SelectedItem="{Binding SecondSelectedItem}" />
 
         <Grid Grid.Row="1">
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -128,11 +131,18 @@
             <Button Content="Up"
                     ToolTip="Alt+Up"
                     Command="{Binding MoveUp}" />
-            
+
             <Button Content="Down"
                     Grid.Column="1"
                     ToolTip="Alt+Down"
                     Command="{Binding MoveDown}" />
+
+            <Grid Grid.Column="1"
+                  Height="auto"
+                  Width=".5"
+                  Margin="0 10"
+                  Background="Black"
+                  HorizontalAlignment="Right" />
         </Grid>
 
         <Grid Grid.Row="1"
@@ -140,6 +150,7 @@
               Grid.ColumnSpan="2">
 
             <Grid.ColumnDefinitions>
+                <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -154,8 +165,13 @@
                     ToolTip="Ctrl+&quot;-&quot;"
                     Command="{Binding DeleteCommand}" />
 
-            <Button Content="Save"
+            <Button Content="DeleteAll"
                     Grid.Column="2"
+                    ToolTip="Ctrl+D"
+                    Command="{Binding DeleteAllCommand}" />
+
+            <Button Content="Save"
+                    Grid.Column="3"
                     ToolTip="Ctrl+S"
                     Command="{Binding SaveCommand}" />
         </Grid>
